@@ -33,4 +33,9 @@ public class UserService {
         return repository.findAll();
     }
 
+    @Transactional(readOnly = true)
+    public List<User> findById(String id){
+        return repository.findById(id);
+    }
+
 }

@@ -35,5 +35,9 @@ public class UserController {
         return service.findAllUsers();
     }
 
+    @GetMapping("/find-by-id/{id}")
+    public List<User> findUserById(@PathVariable String id){
+        return service.findById(id);
+    }
 
 }
