@@ -18,7 +18,7 @@ public class PostController {
         this.service = service;
     }
 
-    @PostMapping("/register-post/post")
+    @PostMapping("/register-post")
     public ResponseEntity<String> registerPost(@RequestBody Post post){
         service.savePost(post);
         return new ResponseEntity<>(HttpStatus.CREATED);

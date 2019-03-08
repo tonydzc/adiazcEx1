@@ -18,7 +18,7 @@ public class TagController {
         this.service = service;
     }
 
-    @PostMapping("/register-tag/Tag")
+    @PostMapping("/register-tag")
     public ResponseEntity<String> registerTag(@RequestBody Tag tag){
         service.saveTag(tag);
         return new ResponseEntity<>(HttpStatus.CREATED);
