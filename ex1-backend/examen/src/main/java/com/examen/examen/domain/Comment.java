@@ -13,6 +13,13 @@ public class Comment {
     private String comment;
     private Date timestamp;
 
+    @ManyToOne
+    private Post post;
+
+    public Post getPost() { return post; }
+
+    public void setPost(Post post) {  this.post = post; }
+
     public Long getId() {
         return id;
     }

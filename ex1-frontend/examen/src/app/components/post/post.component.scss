@@ -1,0 +1,23 @@
+.post{
+    margin: 0 auto;
+}
+
+.post {
+    min-width: 620px;
+    /* height: 250px; */
+    max-height: 400px;
+    background: #DFDFDF;
+    /* background-size: auto; */
+    margin-bottom: 10px;
+    background-size: 430px 250px;
+}
+
+.post-board{
+    font-family: 'Indie Flower';
+    margin: 0 auto;
+    color: #000;
+}
+.title-post, .content-post {
+    padding: 15px;
+}
+

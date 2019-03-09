@@ -1,6 +1,8 @@
 package com.examen.examen.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class User {
@@ -10,6 +12,13 @@ public class User {
     private Long id;
     private String nickname;
     private int status;
+
+    @ManyToMany
+    private Set<Tag> tags = new HashSet<>();
+
+    public Set<Tag> getTags() {  return tags; }
+
+    public void setTags(Set<Tag> tags) {  this.tags = tags; }
 
     public Long getId() {
         return id;
