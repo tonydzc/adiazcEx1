@@ -1,0 +1,7 @@
+<div class="post-board col-md-6">
+    <div class="col-md-6 post" *ngFor="let post of posts">
+        <h2 class="title-post">{{post.title}}</h2>
+        <p class="content-post">{{post.text}}</p>
+        <app-add-comment></app-add-comment>
+        </div>
+</div>

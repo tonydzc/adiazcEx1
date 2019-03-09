@@ -1,0 +1,12 @@
+<div class="col-md-6 addPost">
+  <form  [formGroup]="addform" #f="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <input type="title" formControlName="title" placeholder="Titulo" name="title" class="form-control" id="title">
+    </div>
+      <div class="form-group">
+          <textarea type="text" formControlName="text" placeholder="Bla Bla Bla..." name="text" class="form-control" id="text">
+            </textarea> 
+      </div>
+    <button class="btn btn-success" >Publicar</button>
+  </form>
+</div>

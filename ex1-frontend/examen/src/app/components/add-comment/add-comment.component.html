@@ -1,0 +1,9 @@
+<div class="col-md-12 addComment">
+    <form class="form-inline" [formGroup]="addform" (ngSubmit)="onSubmit()">
+   
+        <input class="col-md-6 d-line form-control" type="comment" formControlName="comment" placeholder="Comenta.." name="comment" id="comment">
+      
+       
+      <button class="btn btn-success d-line col-md-3 offset-md-1" >comentar</button>
+    </form>
+  </div>

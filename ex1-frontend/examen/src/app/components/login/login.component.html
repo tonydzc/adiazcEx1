@@ -1,0 +1,21 @@
+<div class="row">
+
+  <div class="col-md-6 col-md-offset-2 login ">
+    <h1>Ingresar </h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="nickname">Nickname:</label>
+        <input type="text" class="form-control" formControlName="nickname" id="nickname">
+        <div *ngIf="submitted && loginForm.controls.nickname.errors" class="error">
+          <div *ngIf="loginForm.controls.nickname.errors.required">Nickname es requerido</div>
+        </div>
+      </div>
+
+      <button class="btn btn-default">Ingresar</button>
+      <a href="/user" class="btn ">Registrarse</a>
+      <div *ngIf="invalidLogin" class="error">
+        <div>Invalid credentials.</div>
+      </div>
+    </form>
+  </div>
+</div>

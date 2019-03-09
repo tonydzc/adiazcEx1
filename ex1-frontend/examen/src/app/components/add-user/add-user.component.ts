@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {first} from "rxjs/operators";
 import {Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators, NgForm} from "@angular/forms";
-import {UserService} from "../services/user/user.service";
-import { User } from '../model/user.model';
+import { User } from 'src/app/model/user.model';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-add-user',
@@ -28,19 +27,16 @@ export class AddUserComponent implements OnInit {
   };
 
   ngOnInit() {
-   
     this.addform = this.formBuilder.group({
-      nickname: ['', Validators.required],
-      status: ['', Validators.required],
+      nickname: ['', Validators.required]
     });
 
   }
 
   onSubmit() {
-    this.user.id='12';
     this.user.nickname=this.addform.value.nickname;
-    this.user.status=this.addform.value.status;
     console.log(this.addform.value.nickname);
+    this.createUser();
   }
 
 }

@@ -10,7 +10,7 @@ export class UserService {
   
 
   getUsers(): Observable <any[]> {
-    const url = 'http://localhost:8080/user/find-ll';
+    const url = 'http://localhost:8080/user/find-all';
     return this.http.get<any[]>(url);
   }
 

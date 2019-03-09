@@ -1,5 +1,5 @@
 export class User {
     id: number;
     nickname: string;
-    status: number;
+    status: number=1;
 }

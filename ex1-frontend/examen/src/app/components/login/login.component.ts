@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {first} from "rxjs/operators";
-import { AuthService } from '../services/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -22,8 +22,8 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    if(this.loginForm.controls.email.value == 'tonydzc' && this.loginForm.controls.password.value == 'password') {
-      this.router.navigate(['user']);
+    if(this.loginForm.controls.nickname.value == 'tonydzc') {
+      this.router.navigate(['home']);
   }else {
     this.invalidLogin = true;
   }
@@ -31,8 +31,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
+      nickname: ['', Validators.required]
     });
   }
 }

@@ -1,0 +1,15 @@
+<div class="col-md-6 adduser">
+    <h2 class="text-center">Registrese</h2>
+    <form  [formGroup]="addform" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+
+        <label for="nickname">Nickname</label>
+        <input formControlName="nickname" type="nickname" formControlName="nickname" placeholder="nickname" name="nickname" class="form-control" id="nickname">
+
+         <label for="status">Preferencias</label>
+  
+      </div>
+    
+      <button class="btn btn-success" >Registrar</button>
+    </form>
+  </div>
