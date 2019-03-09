@@ -29,6 +29,16 @@ public class PostService {
         repository.saveAndFlush(post);
     }
 
+    @Transactional
+    public Post findById(long id){
+        return repository.findById(id).get();
+    }
+
+    @Transactional
+    public List <Post> findByNickname(String nickname){
+        return repository.findByNickname(nickname);
+    }
+
     @Transactional(readOnly = true)
     public List<Post> findAllPosts(){
         return repository.findAll();

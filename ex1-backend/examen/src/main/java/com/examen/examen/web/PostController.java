@@ -24,10 +24,9 @@ public class PostController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PutMapping("/update-post")
-    public ResponseEntity<String> updatePost(@RequestBody Post post){
-        service.updatePost(post);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+    @GetMapping("/find-Nickname")
+    public List <Post> findByNickname(@RequestParam("nickname") String nickname){
+        return service.findByNickname(nickname);
     }
 
     @GetMapping("/find-all")

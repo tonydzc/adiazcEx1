@@ -28,6 +28,11 @@ public class TagService {
         repository.saveAndFlush(tag);
     }
 
+    @Transactional
+    public Tag findById(long id){
+        return repository.findById(id).get();
+    }
+
     @Transactional(readOnly = true)
     public List<Tag> findAllTags(){
         return repository.findAll();

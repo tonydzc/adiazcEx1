@@ -24,9 +24,9 @@ public class CommentController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PutMapping("/update-comment")
-    public ResponseEntity<String> updateComment(@RequestBody Comment comment){
-        service.updateComment(comment);
+    @PutMapping("/updateComment/{id}")
+    public ResponseEntity<String> updateComment(@PathVariable long id, @RequestBody Comment comment){
+        service.updateComment(comment, id);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 

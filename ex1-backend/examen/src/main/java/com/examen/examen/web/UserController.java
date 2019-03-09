@@ -24,20 +24,13 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PutMapping("/update-user")
-    public ResponseEntity<String> updateUser(@RequestBody User user){
-        service.updateUser(user);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+    @GetMapping("/find-Nickname")
+    public User findByNickname(@RequestParam("nickname") String nickname){
+        return service.findByNickname(nickname);
     }
 
     @GetMapping("/find-all")
     public List<User> findAllUsers(){
         return service.findAllUsers();
     }
-
-    @GetMapping("/find-by-id/{id}")
-    public List<User> findUserById(@PathVariable String id){
-        return service.findById(id);
-    }
-
 }

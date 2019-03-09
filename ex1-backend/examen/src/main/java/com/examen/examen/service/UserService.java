@@ -33,9 +33,10 @@ public class UserService {
         return repository.findAll();
     }
 
-    @Transactional(readOnly = true)
-    public List<User> findById(String id){
-        return repository.findById(id);
+
+    @Transactional
+    public User findByNickname(String nickname){
+        return repository.findByNickname(nickname);
     }
 
 }

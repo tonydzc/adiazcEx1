@@ -22,11 +22,16 @@ public class CommentService {
     }
 
     @Transactional
-    public void updateComment(Comment comment){
-        Optional<Comment> examenComment = repository.findById(comment.getId());
-        Comment tempComment = examenComment.get();
-        comment.setId(tempComment.getId());
-        repository.saveAndFlush(comment);
+    public Comment findById(long id){
+        return repository.findById(id).get();
+    }
+
+    @Transactional
+    public void updateComment(Comment comment, Long id){
+        Comment commentToUpdate= repository.findById(id).get();
+        commentToUpdate.setComment(comment.getComment());
+        commentToUpdate.setTimestamp(comment.getTimestamp());
+        repository.saveAndFlush(commentToUpdate);
     }
 
     @Transactional(readOnly = true)

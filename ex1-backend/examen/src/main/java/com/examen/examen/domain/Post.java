@@ -2,6 +2,8 @@ package com.examen.examen.domain;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Post {
@@ -16,9 +18,20 @@ public class Post {
     private String imagen;
     private Date timestamp;
 
-    @ManyToOne
-    @JoinColumn
-    private Comment comment;
+    @ManyToMany
+    private Set<Tag> tags = new HashSet<>();
+
+    @OneToMany
+    @OrderBy("timestamp ASC")
+    private Set<Comment> comments = new HashSet<>();
+
+    public Set<Comment> getComments() { return comments;  }
+
+    public void setComments(Set<Comment> comments) { this.comments = comments;  }
+
+    public Set<Tag> getTags() { return tags; }
+
+    public void setTags(Set<Tag> tags) { this.tags = tags; }
 
     public Long getId() {
         return id;

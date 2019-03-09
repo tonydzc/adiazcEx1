@@ -1,6 +1,8 @@
 package com.examen.examen.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class User {
@@ -12,16 +14,11 @@ public class User {
     private int status;
 
     @ManyToMany
-    @JoinColumn
-    private Post post;
+    private Set<Tag> tags = new HashSet<>();
 
-    @ManyToMany
-    @JoinColumn
-    private Tag tag;
+    public Set<Tag> getTags() {  return tags; }
 
-    @ManyToOne
-    @JoinColumn
-    private Comment comment;
+    public void setTags(Set<Tag> tags) {  this.tags = tags; }
 
     public Long getId() {
         return id;

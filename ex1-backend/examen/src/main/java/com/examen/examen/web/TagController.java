@@ -24,12 +24,6 @@ public class TagController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PutMapping("/update-tag")
-    public ResponseEntity<String> updateTag(@RequestBody Tag tag){
-        service.updateTag(tag);
-        return new ResponseEntity<>(HttpStatus.CREATED);
-    }
-
     @GetMapping("/find-all")
     public List<Tag> findAllTags(){
         return service.findAllTags();
