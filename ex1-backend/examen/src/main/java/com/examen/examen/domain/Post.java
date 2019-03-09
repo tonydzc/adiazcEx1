@@ -16,6 +16,10 @@ public class Post {
     private String imagen;
     private Date timestamp;
 
+    @ManyToOne
+    @JoinColumn
+    private Comment comment;
+
     public Long getId() {
         return id;
     }
